@@ -59,7 +59,7 @@ class Unoconv extends Container implements DocxConverter
 	 */
 	protected function setDefaults()
 	{
-		$this->binary = env('UNOCONV_BIN');
+		$this->binary = function_exists('env') ? env('UNOCONV_BIN') : '/usr/bin/unoconv';
 
 		$this->profile = '/tmp/gears-pdf-unoconv';
 
